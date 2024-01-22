@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "application.max-allowed-books",
+  "type": "java.lang.Integer",
+  "description": "Maximum allowed books a reader can hold at a time."
+}]}

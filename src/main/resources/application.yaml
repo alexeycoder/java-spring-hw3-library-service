@@ -1,0 +1,31 @@
+application:
+  max-allowed-books: 3
+server:
+  port: 8080
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+    url: jdbc:h2:file:./data/library
+  h2:
+    # http://localhost:port/h2-console
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    # откладываем выполнение скрипта data.sql, наполняющего базу тестовыми
+    # данными, до момента, когда Hibernate (пере)создаст схему, иначе скрипт
+    # будет запускаться слишком рано:
+    defer-datasource-initialization: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  # всегда запускать data.sql при старте с embedded СУБД:
+  sql:
+    init:
+      mode: always
+
+logging:
+  pattern:
+    console: "%clr(%d{HH:mm}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(%25.25logger{0}){cyan} %clr(:){faint} %m%n%wEx"
