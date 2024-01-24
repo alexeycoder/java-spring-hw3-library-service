@@ -1,105 +1,39 @@
-2024-01-21 21:07:28.461316+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-21 21:26:53.234744+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-21 21:26:56.958311+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-21 21:27:02.768897+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-21 21:27:09.930788+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:21:51.905545+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:24:13.873614+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:26:55.797383+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:48:30.634597+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:48:39.396716+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:49:19.475245+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 01:49:21.923902+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 02:14:37.787312+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 02:50:56.424280+03:00 jdbc[23]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 05:06:18.174818+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 05:06:20.636064+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 05:07:27.866901+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 05:07:43.135990+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:07:05.721505+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:07:11.453639+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:10:30.161872+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:10:36.325388+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:10:37.843784+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:10:41.809693+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:37:53.413698+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:37:58.236851+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 06:38:01.649018+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:22:28.461587+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:23:57.149240+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:24:07.627201+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:24:13.429844+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:35:15.086750+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:35:17.879253+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:35:20.231677+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
-2024-01-22 13:39:46.461271+03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
-The object is already closed [90007-224]
+2024-01-24 04:03:32.492847+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO issues (book_id, reader_id, issued_at, returned_at) [*]VALUE (1, 5, NOW(), NULL), (3, 5, NOW(), NULL), (5, 5, NOW(), NULL), (2, 8, NOW(), NULL), (4, 8, NOW(), NULL), (10,1, NOW(), NULL)"; ожидалось "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO issues (book_id, reader_id, issued_at, returned_at) [*]VALUE (1, 5, NOW(), NULL), (3, 5, NOW(), NULL), (5, 5, NOW(), NULL), (2, 8, NOW(), NULL), (4, 8, NOW(), NULL), (10,1, NOW(), NULL)"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO issues (book_id, reader_id, issued_at, returned_at) VALUE (1, 5, NOW(), NULL), (3, 5, NOW(), NULL), (5, 5, NOW(), NULL), (2, 8, NOW(), NULL), (4, 8, NOW(), NULL), (10,1, NOW(), NULL) [42001-224]
+2024-01-24 04:15:02.446289+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO issues (book_id, reader_id, issued_at, returned_at) [*]VALUE (1, 5, CURRENT_TIMESTAMP(), NULL), (3, 5, CURRENT_TIMESTAMP(), NULL), (5, 5, CURRENT_TIMESTAMP(), NULL), (2, 8, CURRENT_TIMESTAMP(), NULL), (4, 8, CURRENT_TIMESTAMP(), NULL), (10,1, CURRENT_TIMESTAMP(), NULL)"; ожидалось "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO issues (book_id, reader_id, issued_at, returned_at) [*]VALUE (1, 5, CURRENT_TIMESTAMP(), NULL), (3, 5, CURRENT_TIMESTAMP(), NULL), (5, 5, CURRENT_TIMESTAMP(), NULL), (2, 8, CURRENT_TIMESTAMP(), NULL), (4, 8, CURRENT_TIMESTAMP(), NULL), (10,1, CURRENT_TIMESTAMP(), NULL)"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO issues (book_id, reader_id, issued_at, returned_at) VALUE (1, 5, CURRENT_TIMESTAMP(), NULL), (3, 5, CURRENT_TIMESTAMP(), NULL), (5, 5, CURRENT_TIMESTAMP(), NULL), (2, 8, CURRENT_TIMESTAMP(), NULL), (4, 8, CURRENT_TIMESTAMP(), NULL), (10,1, CURRENT_TIMESTAMP(), NULL) [42001-224]
+2024-01-24 04:27:49.933605+03:00 jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1626)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.populateClientAppName(GenericDataSource.java:199)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:162)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:74)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:106)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:102)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:61)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:119)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:43)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:55)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:106)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1315)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1163)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:960)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:77)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2024-01-24 04:32:11.789359+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTO issues (book_id, reader_id, issued_at, returned_at)\000d\000a[*]VALUE\000d\000a\0009(1, 5, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(3, 5, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(5, 5, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(2, 8, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(4, 8, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(10,1, CURRENT_TIMESTAMP(), NULL)"; ожидалось "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO issues (book_id, reader_id, issued_at, returned_at)\000d\000a[*]VALUE\000d\000a\0009(1, 5, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(3, 5, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(5, 5, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(2, 8, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(4, 8, CURRENT_TIMESTAMP(), NULL),\000d\000a\0009(10,1, CURRENT_TIMESTAMP(), NULL)"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO issues (book_id, reader_id, issued_at, returned_at)
+VALUE
+	(1, 5, CURRENT_TIMESTAMP(), NULL),
+	(3, 5, CURRENT_TIMESTAMP(), NULL),
+	(5, 5, CURRENT_TIMESTAMP(), NULL),
+	(2, 8, CURRENT_TIMESTAMP(), NULL),
+	(4, 8, CURRENT_TIMESTAMP(), NULL),
+	(10,1, CURRENT_TIMESTAMP(), NULL) [42001-224]

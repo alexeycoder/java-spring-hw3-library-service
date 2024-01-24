@@ -1,3 +1,38 @@
+## Урок 4. Spring MVC. Использование шаблонизатора Thymeleaf
+
+В предыдущий проект добавить следующие ресурсы, которые возвращают готовые HTML-страницы:
+
+1. `/ui/books`&nbsp;&mdash; на странице должен отобразиться список всех доступных книг в системе.
+
+2. `/ui/reader`&nbsp;&mdash; аналогично 1.1
+
+3. `/ui/issues`&nbsp;&mdash; на странице отображается таблица, в которой есть столбцы (книга, читатель, когда взял, когда вернул (если не вернул - пустая ячейка)).
+
+4. `/ui/reader/{id}`&nbsp;&mdash; страница, где написано имя читателя с идентификатором id и перечислены книги, которые на руках у этого читателя
+
+### Решение:
+
+Контроллеры для Веба &nbsp;&mdash; [edu.alexey.spring.library.web](src/main/java/edu/alexey/spring/library/web/)
+
+Шаблоны&nbsp;&mdash; [src/main/resources/templates](src/main/resources/templates)
+
+*Страница Книги:*
+
+![Книги](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw4-thymeleaf/books.png)
+
+*Страница Читатели:*
+
+![Читатели](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw4-thymeleaf/readers.png)
+
+*Страница Выдачи книг:*
+
+![Выдачи](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw4-thymeleaf/issue_descriptions.png)
+
+*Страница Книг удерживаемых читателем:*
+
+![Удерживаемые книги](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw4-thymeleaf/books_held_by_reader.png)
+
+
 ## Урок 3. Использование Spring для разработки серверного приложения
 
 1\. Доделать сервис управления книгами:

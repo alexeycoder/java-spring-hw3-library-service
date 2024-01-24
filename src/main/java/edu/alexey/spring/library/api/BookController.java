@@ -17,7 +17,7 @@ import edu.alexey.spring.library.services.BookService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController
+@RestController("api.BookController")
 @RequestMapping("/book")
 public class BookController {
 
