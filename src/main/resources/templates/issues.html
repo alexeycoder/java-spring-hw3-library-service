@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/styles/main.css">
+<title>Библиотека &mdash; Выдачи книг</title>
+</head>
+
+<body>
+	<h2>Выдачи книг</h2>
+	<div class="table">
+		<div class="row header">
+			<div class="cell cell__grow_1 align_right">ID</div>
+			<div class="cell">Книга</div>
+			<div class="cell">Читатель</div>
+			<div class="cell">Взял</div>
+			<div class="cell">Вернул</div>
+		</div>
+
+		<div class="row" th:each="item : ${items}">
+			<div class="cell cell__grow_1 align_right" th:text="${item.issueId}"></div>
+			<div class="cell" th:text="${item.book.name}"></div>
+			<div class="cell" th:text="${item.reader.name}"></div>
+			<div class="cell"
+				th:text="${#temporals.format(item.issuedAt, 'dd-MM-yyyy HH:mm')}"></div>
+			<div class="cell"
+				th:text="${#temporals.format(item.returnedAt, 'dd-MM-yyyy HH:mm')}"></div>
+		</div>
+	</div>
+</body>
+
+</html>

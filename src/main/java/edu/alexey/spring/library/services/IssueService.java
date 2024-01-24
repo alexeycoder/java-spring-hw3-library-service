@@ -1,6 +1,7 @@
 package edu.alexey.spring.library.services;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Example;
@@ -28,6 +29,10 @@ public class IssueService {
 
 	private final ReaderRepository readerRepository;
 	private final BookRepository bookRepository;
+
+	public List<Issue> getAll() {
+		return issueRepository.findAll();
+	}
 
 	public Optional<Issue> findById(long issueId) {
 		return issueRepository.findById(issueId);

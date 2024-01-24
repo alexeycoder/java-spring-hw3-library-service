@@ -1,0 +1,40 @@
+.align_right {
+	justify-content: end;
+}
+
+.table {
+	display: flex;
+	flex-flow: column nowrap;
+	border: 1px solid black;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+
+	&:nth-of-type(even) {
+		background-color: lightgray;
+	}
+
+	&:nth-of-type(odd) {
+		background-color: transparent;
+	}
+}
+
+.cell {
+	display: flex;
+	flex-flow: row nowrap;
+	flex-grow: 1;
+	flex-basis: 0;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.cell__grow_1 {
+	flex-grow: 0.1;
+}
+
+.header {
+	font-weight: bold;
+}

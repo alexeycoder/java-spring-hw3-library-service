@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/styles/main.css">
+<title>Библиотека &mdash; Книги</title>
+</head>
+
+<body>
+
+	<h2>Читатель <span th:text="${reader.readerId}"></span>: <span th:text="${reader.name}"></span></h2>
+
+	
+	<h3>Книги на руках</h3>
+	<div class="table">
+		<div class="row header">
+			<div class="cell cell__grow_1 align_right">ID</div>
+			<div class="cell">Автор&nbsp;&mdash; Название</div>
+		</div>
+
+		<div class="row" th:each="item : ${items}">
+			<div class="cell cell__grow_1 align_right" th:text="${item.bookId}"></div>
+			<div class="cell" th:text="${item.name}"></div>
+		</div>
+	</div>
+</body>
+
+</html>
