@@ -1,5 +1,7 @@
 package edu.alexey.spring.library.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +35,11 @@ public class IssueController {
 	@PostConstruct
 	void postConstr() {
 		log.info("application.max-allowed-books = {}", maxAllowedBooks);
+	}
+
+	@GetMapping()
+	public List<Issue> allRaw() {
+		return ResponseEntity.ok(issueService.getAll()).getBody();
 	}
 
 	@GetMapping("/{id}")

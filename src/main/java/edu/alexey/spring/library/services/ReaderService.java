@@ -3,40 +3,31 @@ package edu.alexey.spring.library.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import edu.alexey.spring.library.entities.Book;
 import edu.alexey.spring.library.entities.Issue;
 import edu.alexey.spring.library.entities.Reader;
 import edu.alexey.spring.library.exceptions.NoSuchReaderException;
-import edu.alexey.spring.library.repositories.BookRepository;
-import edu.alexey.spring.library.repositories.IssueRepository;
-import edu.alexey.spring.library.repositories.ReaderRepository;
+import edu.alexey.spring.library.repositories.BookDao;
+import edu.alexey.spring.library.repositories.IssueDao;
+import edu.alexey.spring.library.repositories.ReaderDao;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Service
 public class ReaderService {
 
-	private final ReaderRepository readerRepository;
-	private final IssueRepository issueRepository;
-	private final BookRepository bookRepository;
-
-	public ReaderService(
-			ReaderRepository readerRepository,
-			IssueRepository issueRepository,
-			BookRepository bookRepository) {
-		this.readerRepository = readerRepository;
-		this.issueRepository = issueRepository;
-		this.bookRepository = bookRepository;
-	}
+	private final ReaderDao readerDao;
+	private final IssueDao issueDao;
+	private final BookDao bookDao;
 
 	public List<Reader> getAll() {
-		return readerRepository.findAll();
+		return readerDao.findAll();
 	}
 
 	public Optional<Reader> findById(long readerId) {
-		return readerRepository.findById(readerId);
+		return readerDao.findById(readerId);
 	}
 
 	public Reader getById(long readerId) {
@@ -46,7 +37,7 @@ public class ReaderService {
 	public Reader deleteById(long readerId) {
 
 		Reader reader = findById(readerId).orElseThrow(() -> new NoSuchReaderException(readerId));
-		readerRepository.delete(reader);
+		readerDao.delete(reader);
 		return reader;
 	}
 
@@ -60,30 +51,22 @@ public class ReaderService {
 		}
 
 		reader.setReaderId(null);
-		return readerRepository.saveAndFlush(reader);
+		return readerDao.save(reader);
 	}
 
 	public List<Issue> findAllIssuesByReaderId(long readerId) {
-		var matcher = ExampleMatcher.matchingAll().withIgnorePaths("issueId", "bookId", "issuedAt", "returnedAt");
-		return issueRepository.findAll(Example.of(new Issue(null, 0, readerId, null, null), matcher));
+		return issueDao.findAllByReaderId(readerId);
 	}
 
 	public List<Issue> findUncoveredIssuesByReaderId(long readerId) {
-		var matcher = ExampleMatcher.matchingAll().withIgnorePaths("issueId", "bookId", "issuedAt")
-				.withIncludeNullValues();
-		return issueRepository.findAll(Example.of(new Issue(null, 0, readerId, null, null), matcher));
+		return issueDao.findUncoveredByReaderId(readerId);
 	}
 
 	public List<Book> getBooksHeldByReaderId(long readerId) {
 		return findUncoveredIssuesByReaderId(readerId).stream()
 				.mapToLong(Issue::getBookId)
-				.mapToObj(bookRepository::getReferenceById)
+				.mapToObj(bookDao::findById).map(Optional::get)
 				.toList();
-
-		//		List<IssueDescription> issueDescriptions = findUncoveredIssuesByReaderId(readerId).stream()
-		//				.map(issue -> new IssueDescription(issue, bookRepository.getReferenceById(issue.getBookId()), reader))
-		//				.toList();
-		//		return issueDescriptions;
 	}
 
 }

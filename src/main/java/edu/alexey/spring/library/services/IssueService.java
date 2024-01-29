@@ -16,19 +16,19 @@ import edu.alexey.spring.library.exceptions.AlreadyCoveredIssueException;
 import edu.alexey.spring.library.exceptions.NoSuchBookException;
 import edu.alexey.spring.library.exceptions.NoSuchIssueException;
 import edu.alexey.spring.library.exceptions.NoSuchReaderException;
-import edu.alexey.spring.library.repositories.BookRepository;
-import edu.alexey.spring.library.repositories.IssueRepository;
-import edu.alexey.spring.library.repositories.ReaderRepository;
+import edu.alexey.spring.library.repositories.BookDao;
+import edu.alexey.spring.library.repositories.IssueDao;
+import edu.alexey.spring.library.repositories.ReaderDao;
 import lombok.RequiredArgsConstructor;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class IssueService {
 
-	private final IssueRepository issueRepository;
+	private final IssueDao issueRepository;
 
-	private final ReaderRepository readerRepository;
-	private final BookRepository bookRepository;
+	private final ReaderDao readerDao;
+	private final BookDao bookDao;
 
 	public List<Issue> getAll() {
 		return issueRepository.findAll();
@@ -43,26 +43,21 @@ public class IssueService {
 	}
 
 	public long countHeldBooksByReaderId(long readerId) {
-		if (!readerRepository.existsById(readerId)) {
+		if (!readerDao.existsById(readerId)) {
 			throw new NoSuchReaderException(readerId);
 		}
 
 		var matcher = ExampleMatcher.matchingAll().withIgnorePaths("issueId", "bookId", "issuedAt")
 				.withIncludeNullValues();
 		return issueRepository.count(Example.of(new Issue(null, 0, readerId, null, null), matcher));
-
-		//		var matcher = ExampleMatcher.matchingAll()
-		//				.withMatcher("name", GenericPropertyMatchers.contains().ignoreCase())
-		//				.withIgnorePaths("groupId");
-		//		return studentRepository.findAll(Example.of(new Student(null, namePattern, null), matcher));
 	}
 
 	public Issue issue(IssueRequest issueRequest) {
 
-		if (!bookRepository.existsById(issueRequest.getBookId())) {
+		if (!bookDao.existsById(issueRequest.getBookId())) {
 			throw new NoSuchBookException(issueRequest.getBookId());
 		}
-		if (!readerRepository.existsById(issueRequest.getReaderId())) {
+		if (!readerDao.existsById(issueRequest.getReaderId())) {
 			throw new NoSuchReaderException(issueRequest.getReaderId());
 		}
 
@@ -76,15 +71,15 @@ public class IssueService {
 			throw new AlreadyCoveredIssueException(issueId, issue.getReturnedAt());
 		}
 		issue.setReturnedAt(LocalDateTime.now());
-		return issueRepository.saveAndFlush(issue);
+		return issueRepository.save(issue);
 	}
 
 	public IssueDescription getDescriptionById(long issueId) {
 
 		Issue issue = findById(issueId).orElseThrow(() -> new NoSuchIssueException(issueId));
-		Book book = bookRepository.findById(issue.getBookId())
+		Book book = bookDao.findById(issue.getBookId())
 				.orElseThrow(() -> new NoSuchBookException(issue.getBookId()));
-		Reader reader = readerRepository.findById(issue.getReaderId())
+		Reader reader = readerDao.findById(issue.getReaderId())
 				.orElseThrow(() -> new NoSuchReaderException(issue.getReaderId()));
 		return new IssueDescription(issue, book, reader);
 	}

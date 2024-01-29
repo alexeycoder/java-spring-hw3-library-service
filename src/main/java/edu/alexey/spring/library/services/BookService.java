@@ -7,23 +7,21 @@ import org.springframework.stereotype.Service;
 
 import edu.alexey.spring.library.entities.Book;
 import edu.alexey.spring.library.exceptions.NoSuchBookException;
-import edu.alexey.spring.library.repositories.BookRepository;
+import edu.alexey.spring.library.repositories.BookDao;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Service
 public class BookService {
 
-	private final BookRepository bookRepository;
-
-	public BookService(BookRepository bookRepository) {
-		this.bookRepository = bookRepository;
-	}
+	private final BookDao bookDao;
 
 	public List<Book> getAll() {
-		return bookRepository.findAll();
+		return bookDao.findAll();
 	}
 
 	public Optional<Book> findById(long bookId) {
-		return bookRepository.findById(bookId);
+		return bookDao.findById(bookId);
 	}
 
 	public Book getById(long bookId) {
@@ -33,7 +31,7 @@ public class BookService {
 	public Book deleteById(long bookId) {
 
 		Book book = findById(bookId).orElseThrow(() -> new NoSuchBookException(bookId));
-		bookRepository.delete(book);
+		bookDao.delete(book);
 		return book;
 	}
 
@@ -47,6 +45,6 @@ public class BookService {
 		}
 
 		book.setBookId(null);
-		return bookRepository.saveAndFlush(book);
+		return bookDao.save(book);
 	}
 }

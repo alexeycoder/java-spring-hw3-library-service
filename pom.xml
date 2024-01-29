@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>edu.alexey.spring</groupId>
-	<artifactId>hw4-library-services</artifactId>
+	<artifactId>hw5-library-services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Homework 4 - Library Services</name>
+	<name>Homework 5 - Library Services</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -51,7 +51,7 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.transaction</groupId>
@@ -61,10 +61,6 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.orm</groupId>
-			<artifactId>hibernate-core</artifactId>
 		</dependency>
 
 		<dependency>
