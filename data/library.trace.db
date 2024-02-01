@@ -37,3 +37,18 @@ VALUE
 	(2, 8, CURRENT_TIMESTAMP(), NULL),
 	(4, 8, CURRENT_TIMESTAMP(), NULL),
 	(10,1, CURRENT_TIMESTAMP(), NULL) [42001-224]
+2024-02-01 15:35:07.169065+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-224]
+2024-02-01 16:08:07.901881+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-224]
+2024-02-01 16:11:46.186830+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-224]
+2024-02-01 16:13:12.356916+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-224]
+2024-02-01 16:14:47.415778+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-224]

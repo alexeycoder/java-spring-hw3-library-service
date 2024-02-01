@@ -4,7 +4,7 @@ server:
   port: 8080
 spring:
   datasource:
-    driverClassName: org.h2.Driver
+    driver-class-name: org.h2.Driver
     username: sa
     password: sa
     url: jdbc:h2:file:./data/library
@@ -27,5 +27,13 @@ spring:
       mode: always
 
 logging:
+#  level:
+#    web: debug
   pattern:
     console: "%clr(%d{HH:mm}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(%25.25logger{0}){cyan} %clr(:){faint} %m%n%wEx"
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    operations-sorter: method

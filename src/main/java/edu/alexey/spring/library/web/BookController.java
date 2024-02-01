@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.alexey.spring.library.entities.Book;
 import edu.alexey.spring.library.services.BookService;
+import io.swagger.v3.oas.annotations.Hidden;
 import lombok.RequiredArgsConstructor;
 
 @Controller("web.BookController")
@@ -19,6 +20,7 @@ public class BookController {
 
 	private final BookService bookService;
 
+	@Hidden
 	@GetMapping("/justtext")
 	@ResponseBody
 	String test() {
