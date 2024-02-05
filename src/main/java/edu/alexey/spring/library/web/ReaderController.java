@@ -28,13 +28,13 @@ public class ReaderController {
 		return "readers";
 	}
 
-	@GetMapping("/reader/{id}")
+	@GetMapping("/readers/{id}")
 	String heldBooks(@PathVariable("id") long readerId, Model model) {
 		Reader reader = readerService.getById(readerId);
 		List<Book> heldBooks = readerService.getBooksHeldByReaderId(readerId);
 
 		model.addAttribute("reader", reader);
 		model.addAttribute("items", heldBooks);
-		return "reader/held_books";
+		return "readers/held_books";
 	}
 }

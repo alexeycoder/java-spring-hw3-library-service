@@ -1,3 +1,33 @@
+## Урок 7. Spring Security. Работа с JWT. Защита от основных видов атак.
+
+1\. Для ресурсов, возвращающих HTML-страницы, реализовать авторизацию через login-форму.
+Остальные /api ресурсы, возвращающие JSON, закрывать не нужно!
+
+2.1* Реализовать таблицы User(id, name, password) и Role(id, name), связанные многие ко многим
+
+2.2* Реализовать UserDetailsService, который предоставляет данные из БД (таблицы User и Role)
+
+3.3* Ресурсы выдачей (issue) доступны обладателям роли admin
+
+3.4* Ресурсы читателей (reader) доступны всем обладателям роли reader
+
+3.5* Ресурсы книг (books) доступны всем авторизованным пользователям
+
+### Решение:
+
+* [class User](src/main/java/edu/alexey/spring/library/entities/User.java)
+
+* [class Role](src/main/java/edu/alexey/spring/library/entities/Role.java)
+
+* [реализация Spring Security configuration](src/main/java/edu/alexey/spring/library/security/SecurityConfigurer.java)
+
+* [реализация UserDetailsService](src/main/java/edu/alexey/spring/library/security/UserDetailsServiceImpl.java)
+
+* [class Role](src/main/java/edu/alexey/spring/library/entities/Role.java)
+
+* [SQL наполнения БД тестовыми данными, включая новые таблицы Пользователей, Ролей и связующую таблицу](src/main/resources/data.sql)
+
+
 ## Урок 6. Проектирование и реализация API для серверного приложения.
 
 1. Подключить OpenAPI 3 и swagger к проекту с библиоткой
@@ -11,6 +41,17 @@
 * Именование endpoints приведено к общепринятому (collections<->plural nouns).
 * HTTP-методы *DELETE* теперь возвращают 204 без данных удалённой сущности в теле вместо 200 с данными сущности.
 * HTTP-методы *CREATE* теперь возвращают 201 без данных созданной сущности в теле вместо 200 с данными сущности.
+
+*Swagger - OpenAPI definition*
+
+<a target="_blank" href="https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw6-openapi/openapi-overview.png">
+	<img src="https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw6-openapi/openapi-overview.png" alt="Short" style="width: 400px; float: left;"/>
+</a>
+
+<a target="_blank" href="https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw6-openapi/openapi-in-detail.png">
+	<img src="https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw6-openapi/openapi-in-detail.png" alt="Short" style="width: 400px; float: left;"/>
+</a>
+<br style="clear: both">
 
 
 ## Урок 5. Spring Data для работы с базами данных
