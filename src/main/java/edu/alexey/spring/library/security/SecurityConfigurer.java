@@ -2,6 +2,7 @@ package edu.alexey.spring.library.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,6 +13,7 @@ import edu.alexey.spring.library.entities.Role;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfigurer {
 
 	@Bean
@@ -25,8 +27,8 @@ public class SecurityConfigurer {
 		http.authorizeHttpRequests(requests -> requests
 				.requestMatchers("/").permitAll()
 				.requestMatchers("/h2-console/**").hasRole(Role.ADMIN)
-				.requestMatchers("/ui/issues/**").hasRole(Role.ADMIN)
-				.requestMatchers("/ui/readers/**").hasRole(Role.READER)
+				//.requestMatchers("/ui/issues/**").hasRole(Role.ADMIN)
+				//.requestMatchers("/ui/readers/**").hasRole(Role.READER)
 				.requestMatchers("/ui/**").authenticated()
 				.requestMatchers("/books/**", "/readers/**", "/issues/**").permitAll()
 				.anyRequest().denyAll())

@@ -2,6 +2,7 @@ package edu.alexey.spring.library.web;
 
 import java.util.List;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 @Controller("web.ReaderController")
 @RequiredArgsConstructor
 @RequestMapping("/ui")
+@Secured("ROLE_READER")
 public class ReaderController {
 
 	private final ReaderService readerService;

@@ -2,6 +2,7 @@ package edu.alexey.spring.library.web;
 
 import java.util.List;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 @Controller("web.IssueController")
 @RequiredArgsConstructor
 @RequestMapping("/ui")
+@Secured("ROLE_ADMIN")
 public class IssueController {
 
 	private final IssueService issueService;
