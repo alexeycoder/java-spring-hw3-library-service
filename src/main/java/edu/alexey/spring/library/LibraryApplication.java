@@ -17,8 +17,35 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LibraryApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(LibraryApplication.class, args);
 
-		//		SecurityContext context = SecurityContextHolder.getContext();
+		//try (ConfigurableApplicationContext context = SpringApplication.run(LibraryApplication.class, args)) {
+		//	EntityManager em = context.getBean(EntityManager.class);
+		//	if (em != null) {
+		//		em.createNativeQuery("SELECT * FROM users_roles").getResultList()
+		//				.forEach(r -> System.out.println(Arrays.toString((Object[]) r)));
+		//	}
+		//
+		//	RoleService roleService = context.getBean(RoleService.class);
+		//	UserService userService = context.getBean(UserService.class);
+		//
+		//	System.out.println("====USERSERVICE.FINDALL()====");
+		//	System.out.println(userService.findAll());
+		//
+		//	System.out.println("====ROLESERVICE.FINDALL()====");
+		//	System.out.println(roleService.findAll());
+		//
+		//	System.out.println("====FIND_BY_USERNAME====");
+		//	System.out.println(
+		//			userService.findByUsername("Pasha").get().getRoles().stream().map(Role::getRoleName).toList());
+		//	System.out.println(
+		//			userService.findByUsername("Dasha").get().getRoles().stream().map(Role::getRoleName).toList());
+		//	System.out.println(
+		//			userService.findByUsername("Vasya").get().getRoles().stream().map(Role::getRoleName).toList());
+		//	System.out
+		//			.println(userService.findByUsername("Klavrentiy").get().getRoles().stream().map(Role::getRoleName)
+		//					.toList());
+		//}
 	}
 }

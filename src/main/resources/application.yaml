@@ -14,6 +14,7 @@ spring:
       enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true
     # откладываем выполнение скрипта data.sql, наполняющего базу тестовыми
     # данными, до момента, когда Hibernate (пере)создаст схему, иначе скрипт
     # будет запускаться слишком рано:

@@ -1,5 +1,6 @@
 package edu.alexey.spring.library.entities;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,15 +13,23 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(of = "roleName")
+@ToString(exclude = "users")
 @Table(name = "roles")
-public class Role {
+public class Role implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final String ADMIN = "ADMIN";
 	public static final String READER = "READER";
@@ -33,6 +42,7 @@ public class Role {
 	@Column(nullable = false, unique = true)
 	private String roleName;
 
+	@Builder.Default
 	@ManyToMany(mappedBy = "roles")
 	private Set<User> users = new HashSet<User>();
 }

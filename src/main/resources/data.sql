@@ -50,16 +50,16 @@ VALUES
 	(1, 'ADMIN'),
 	(2, 'READER');
 
-INSERT INTO user_roles (user_id, role_id)
+INSERT INTO users_roles (user_id, role_id)
 	SELECT user_id, 2 AS role_id FROM users WHERE username = 'Паша';
 
-INSERT INTO user_roles (user_id, role_id)
+INSERT INTO users_roles (user_id, role_id)
 	SELECT user_id, 2 AS role_id FROM users WHERE username = 'Даша';
 
-INSERT INTO user_roles (user_id, role_id)
+INSERT INTO users_roles (user_id, role_id)
 	SELECT user_id, 2 AS role_id FROM users WHERE username = 'Вася';
 
-INSERT INTO user_roles (user_id, role_id)
+INSERT INTO users_roles (user_id, role_id)
 	SELECT user_id, 1 AS role_id FROM users WHERE username = 'Клаврентий';
 	
 	
