@@ -30,13 +30,15 @@ public class RecoverExceptionAspect {
 					throw e;
 				}
 			}
+			Object res = getDefault(joinPoint);
 
 			log.info("Подавлено исключение {} в {}.{}",
 					e.getClass().getSimpleName(),
 					joinPoint.getTarget().getClass().getSimpleName(),
 					joinPoint.getSignature().getName());
+			log.info("Возвращается из уловителя: {}", res);
 
-			return getDefault(joinPoint);
+			return res;
 		}
 	}
 
@@ -56,14 +58,24 @@ public class RecoverExceptionAspect {
 		if (joinPoint.getSignature() instanceof MethodSignature signature) {
 
 			Class<?> returnType = signature.getMethod().getReturnType();
-			if (returnType == Boolean.class) {
-				return false;
-			} else if (returnType == Byte.class) {
-				return (byte) 0;
-			} else if (returnType == Character.class) {
-				return '\0';
-			} else if (Number.class.isAssignableFrom(returnType)) {
-				return 0;
+			if (returnType.isPrimitive()) {
+				if (returnType == boolean.class) {
+					return false;
+				} else if (returnType == byte.class) {
+					return (byte) 0;
+				} else if (returnType == char.class) {
+					return '\0';
+				} else if (returnType == short.class) {
+					return (short) 0;
+				} else if (returnType == int.class) {
+					return 0;
+				} else if (returnType == long.class) {
+					return 0L;
+				} else if (returnType == float.class) {
+					return 0f;
+				} else if (returnType == double.class) {
+					return 0d;
+				}
 			}
 
 			return null;
@@ -73,10 +85,11 @@ public class RecoverExceptionAspect {
 		}
 	}
 
-	//	public static void main(String[] args) {
-	//		boolean variable = true;
-	//		System.out.println(((Object) variable).getClass());
-	//
-	//		System.out.println(Number.class.isAssignableFrom(((Object) 10).getClass()));
-	//	}
+	public static void main(String[] args) {
+		boolean variable = true;
+		System.out.println(((Object) variable).getClass());
+
+		System.out.println(Number.class.isAssignableFrom(((Object) 10).getClass()));
+
+	}
 }
