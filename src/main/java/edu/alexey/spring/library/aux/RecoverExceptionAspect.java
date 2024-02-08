@@ -26,7 +26,7 @@ public class RecoverExceptionAspect {
 			Class<? extends RuntimeException>[] noRecoverFor = extractNoRecoverFor(joinPoint);
 			for (Class<? extends RuntimeException> exType : noRecoverFor) {
 
-				if (exType.getClass().isAssignableFrom(e.getClass())) {
+				if (exType.isAssignableFrom(e.getClass())) {
 					throw e;
 				}
 			}
