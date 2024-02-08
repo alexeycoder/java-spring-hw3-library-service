@@ -2,6 +2,7 @@ package edu.alexey.spring.library;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * Сервер, отвечающий за выдачу книг в библиотеке.
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * выдать читателю с идентификатором 25 книгу с идентификатором 57
  */
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class LibraryApplication {
 
 	public static void main(String[] args) {

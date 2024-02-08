@@ -8,11 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.alexey.spring.library.aux.Timer;
 import edu.alexey.spring.library.entities.Issue;
 import edu.alexey.spring.library.services.IssueDescription;
 import edu.alexey.spring.library.services.IssueService;
 import lombok.RequiredArgsConstructor;
 
+@Timer
 @Controller("web.IssueController")
 @RequiredArgsConstructor
 @RequestMapping("/ui")
