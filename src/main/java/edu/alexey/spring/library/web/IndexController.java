@@ -27,16 +27,12 @@ public class IndexController {
 			model.addAttribute("username", currentPrincipalName);
 		}
 
-		someMethod();
-
-		System.out.println("Возвращено " + void.class.getSimpleName());
-
 		return "index";
 	}
 
 	@GetMapping("/some")
-	@RecoverException
-	public byte someMethod() {
+	@RecoverException //(noRecoverFor = IllegalStateException.class)
+	public float someMethod() {
 		throw new IllegalBlockingModeException();
 	}
 
