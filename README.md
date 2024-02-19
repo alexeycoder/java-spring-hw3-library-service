@@ -1,3 +1,40 @@
+## Урок 10. Spring Testing. JUnit и Mockito для написания тестов.
+
+В проекте библиотека написать полноценные API-тесты (с поднятием БД в H2 и WebTestClient) на все ресурсы проекта, т.е.
+получение книги, читателя, выдачи, создание книги, читателя, ресурса,...
+
+Безопасность выключить в тестах.
+
+### Решение:
+
+*Тесты endpoints по контроллерам:*
+
+* [class BookControllerIntegrationTest](src/test/java/edu/alexey/spring/library/api/BookControllerIntegrationTest.java)
+
+* [class ReaderControllerIntegrationTest](src/test/java/edu/alexey/spring/library/api/ReaderControllerIntegrationTest.java)
+
+* [class IssueControllerIntegrationTest](src/test/java/edu/alexey/spring/library/api/IssueControllerIntegrationTest.java)
+
+*Тестирование:*
+
+![Eclipse/JUnit 5](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw10-testing/tests-stat-1.png)
+
+![mvn test](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw10-testing/tests-stat2.png)
+
+
+## Урок 9. Spring Cloud. Микросервисная архитектура.
+
+1\. Восстановить пример, рассмотренный на уроке (запустить эврику и 2 сервиса; заставить их взаимодействовать).
+
+2\.* Добавить третий сервис: сервис читателей.
+
+### Решение:
+
+*Eureka: running micro-services*
+
+![Eureka: running micro-services](https://raw.githubusercontent.com/alexeycoder/illustrations/main/java-spring-hw9-eureka/eureka_micro-services.png)
+
+
 ## Урок 8. Spring AOP, управление транзакциями.
 
 1\. Создать аннотацию замера времени исполнения метода (Timer). Она может
