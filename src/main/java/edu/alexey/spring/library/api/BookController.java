@@ -36,12 +36,13 @@ public class BookController {
 	@Operation(summary = "Gets all books")
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "All books of the library", content = {
 			@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Book.class))) }) })
-	@GetMapping()
+	@GetMapping
 	List<Book> all() {
 		return bookService.getAll();
 	}
 
-	// @ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content(schema = @Schema(hidden = true)))
+	// @ApiResponse(responseCode = "400", description = "Invalid id supplied",
+	// content = @Content(schema = @Schema(hidden = true)))
 	@Operation(summary = "Get book by id", description = "Book must exist")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "The book found", content = {
@@ -56,9 +57,8 @@ public class BookController {
 	@Operation(summary = "Add new book")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "201", description = "The created book URL in Location field", content = @Content),
-			@ApiResponse(responseCode = "400", description = "Invalid book data supplied", content = @Content),
-			@ApiResponse(responseCode = "404", description = "Book not found", content = @Content) })
-	@PostMapping()
+			@ApiResponse(responseCode = "400", description = "Invalid book data supplied", content = @Content) })
+	@PostMapping
 	ResponseEntity<Void> addNew(@RequestBody Book book) {
 		log.info("Запрос на добавление книги \"{}\"", book);
 
@@ -77,6 +77,7 @@ public class BookController {
 			@ApiResponse(responseCode = "404", description = "Book not found", content = @Content) })
 	@DeleteMapping("/{id}")
 	ResponseEntity<Void> delete(@PathVariable("id") long bookId) {
+		System.out.println("bookId = " + bookId);
 		bookService.deleteById(bookId);
 		return ResponseEntity.noContent().build();
 	}

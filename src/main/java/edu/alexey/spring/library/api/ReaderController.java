@@ -54,8 +54,7 @@ public class ReaderController {
 	@Operation(summary = "Add new reader")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "201", description = "The created reader URL in Location field", content = @Content),
-			@ApiResponse(responseCode = "400", description = "Invalid reader data supplied", content = @Content),
-			@ApiResponse(responseCode = "404", description = "Reader not found", content = @Content) })
+			@ApiResponse(responseCode = "400", description = "Invalid reader data supplied", content = @Content) })
 	@PostMapping()
 	ResponseEntity<Void> addNew(@RequestBody Reader reader) {
 

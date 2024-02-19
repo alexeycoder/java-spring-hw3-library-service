@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import edu.alexey.spring.library.entities.Issue;
 import edu.alexey.spring.library.services.IssueDescription;
 import edu.alexey.spring.library.services.IssueService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -47,7 +46,7 @@ public class IssueController {
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
 			@ApiResponse(responseCode = "404", description = "Issue not found", content = @Content) })
 	@GetMapping("/{id}")
-	public ResponseEntity<IssueDescription> infoById(@PathVariable("id") long issueId) {
+	public ResponseEntity<IssueDescription> descriptionById(@PathVariable("id") long issueId) {
 		return ResponseEntity.ok(issueService.getDescriptionById(issueId));
 	}
 
@@ -64,13 +63,13 @@ public class IssueController {
 
 	@Operation(summary = "Does issue book to reader", description = "Book and reader must exist")
 	@ApiResponses(value = {
-			@ApiResponse(responseCode = "201", description = "The carried out issue and its URL in Location field", content = {
-					@Content(mediaType = "application/json", schema = @Schema(implementation = Issue.class)) }),
+			@ApiResponse(responseCode = "201", description = "The carried out issue and its URL in Location field", content = @Content),
 			@ApiResponse(responseCode = "400", description = "Invalid book id or reader id supplied", content = @Content),
 			@ApiResponse(responseCode = "404", description = "Book or reader not found", content = @Content),
 			@ApiResponse(responseCode = "409", description = "Exceeded allowed amount of held books", content = @Content) })
 	@PostMapping()
-	ResponseEntity<Issue> doIssue(@RequestBody IssueRequest request) {
+	ResponseEntity<Void> doIssue(@RequestBody IssueRequest request) {
+
 		log.info("Получен запрос на выдачу: readerId = {}, bookId = {}", request.getReaderId(), request.getBookId());
 		if (maxAllowedBooks <= 0) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
@@ -87,21 +86,20 @@ public class IssueController {
 				.created(UriComponentsBuilder.fromPath("/issues/{issueId}")
 						.buildAndExpand(entry.getIssueId())
 						.toUri())
-				.body(entry);
+				.build();
 	}
 
 	@Operation(summary = "Covers issue i.e. returns the issued book to library", description = "Issue must exist")
 	@ApiResponses(value = {
-			@ApiResponse(responseCode = "200", description = "The covered issue", content = {
-					@Content(mediaType = "application/json", schema = @Schema(implementation = Issue.class)) }),
+			@ApiResponse(responseCode = "200", description = "The covered issue", content = @Content),
 			@ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
 			@ApiResponse(responseCode = "404", description = "Issue not found", content = @Content),
 			@ApiResponse(responseCode = "412", description = "Already covered issue", content = @Content) })
 	@RequestMapping(path = "/{id}", method = { RequestMethod.PUT, RequestMethod.PATCH })
 	// @PutMapping("/{id}")
-	public ResponseEntity<Issue> doCover(@PathVariable("id") long issueId) {
+	public ResponseEntity<Void> doCover(@PathVariable("id") long issueId) {
 		log.info("Получен запрос на возврат: issueId = {}", issueId);
-
-		return ResponseEntity.ok(issueService.cover(issueId));
+		issueService.cover(issueId);
+		return ResponseEntity.ok().build();
 	}
 }

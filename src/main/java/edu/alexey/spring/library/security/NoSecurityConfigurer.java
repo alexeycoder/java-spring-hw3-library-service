@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@Profile("no-securite")
+@Profile("test")
 public class NoSecurityConfigurer {
 
 	@Bean
@@ -21,6 +21,8 @@ public class NoSecurityConfigurer {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.build();
+		return http.csrf(conf -> conf.disable())
+				.authorizeHttpRequests(request -> request.anyRequest().permitAll())
+				.build();
 	}
 }
